@@ -109,30 +109,14 @@ Resources:
           Properties:
             Path: /
             Method: POST
-  # Simple syntax to create a DynamoDB table with a single attribute primary key, more in
-  # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
 
   AddressTable:
-    Type: AWS::DynamoDB::Table
+    Type: AWS::Serverless::SimpleTable
     Properties:
       TableName: addresses
-      AttributeDefinitions:
-        - AttributeName: id
-          AttributeType: S
-        - AttributeName: number
-          AttributeType: S
-        - AttributeName: street_name
-          AttributeType: S
-        - AttributeName: street_suffix
-          AttributeType: S
-        - AttributeName: city
-          AttributeType: S
-        - AttributeName: state
-          AttributeType: S
-        - AttributeName: zipcode
-          AttributeType: S
-      KeySchema:
-        - AttributeName: id
-          KeyType: HASH
-      # Set the capacity to auto-scale
-      BillingMode: PAY_PER_REQUEST
+      PrimaryKey:
+        Name: id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
