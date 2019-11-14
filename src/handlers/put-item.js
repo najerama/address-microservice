@@ -21,13 +21,13 @@ exports.putItemHandler = async (event) => {
     console.log('received:', JSON.stringify(event));
 
     // Get id and name from the body of the request
-    const { id, name } = JSON.parse(body);
+    const { id, number, street_name, street_suffix, city, state, zipcode} = JSON.parse(body);
 
     // Creates a new item, or replaces an old item with a new item
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
     const params = {
         TableName: tableName,
-        Item: { id, name },
+        Item: { id, number, street_name, street_suffix, city, state, zipcode},
     };
     await docClient.put(params).promise();
 
