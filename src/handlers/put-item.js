@@ -72,7 +72,7 @@ exports.putItemHandler = async (event) => {
     let street_suffix = myResult.components.streetSuffix
     let city = myResult.components.cityName
     let state = myResult.components.state
-    let zipcode = myResult.components.zipcode
+    let zipcode = myResult.components.zipCode
 
     // Creates a new item, or replaces an old item with a new item
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
