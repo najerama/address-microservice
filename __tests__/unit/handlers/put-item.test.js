@@ -29,7 +29,7 @@ describe('Test putItemHandler', () => {
 
         const event = {
             httpMethod: 'POST',
-            body: '{"id":"id1","name":"name1"}',
+            body: '{"address":"500 W 120th St, New York, NY 10027"}',
         };
 
         // Invoke putItemHandler()
