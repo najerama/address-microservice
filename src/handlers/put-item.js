@@ -56,7 +56,7 @@ exports.putItemHandler = async (event) => {
         };
         console.log(`response from: ${path} statusCode: ${response.statusCode} body: ${response.body}`);
         return response;
-    } else if (myLookup.result.length > 1) {
+    } else if (lookup.result.length > 1) {
         const response = {
             statusCode: 406,
             body: "Multiple addresses match, must match only one. Be more specific.",
@@ -65,7 +65,7 @@ exports.putItemHandler = async (event) => {
         return response;
     }
 
-    let myResult = myLookup.result[0];
+    let myResult = lookup.result[0];
     let id = myResult.deliveryPointBarcode
     let number = myResult.components.primaryNumber
     let street_name = myResult.components.streetName
