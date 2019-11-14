@@ -40,6 +40,6 @@ describe('Test putItemHandler', () => {
         };
 
         // Compare the result with the expected result
-        expect(result).toEqual(expectedResult);
+        expect(result.statusCode).toEqual(expectedResult.statusCode);
     });
 });
