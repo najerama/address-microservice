@@ -44,7 +44,7 @@ Resources:
       Policies:
         # Give Create/Read/Update/Delete Permissions to the AddressTable
         - DynamoDBCrudPolicy:
-            TableName: addresses
+            TableName: !Ref AddressTable
       Environment:
         Variables:
           # Make table name accessible as environment variable from function code during execution
@@ -71,7 +71,7 @@ Resources:
       Policies:
         # Give Create/Read/Update/Delete Permissions to the AddressTable
         - DynamoDBCrudPolicy:
-            TableName: addresses
+            TableName: !Ref AddressTable
       Environment:
         Variables:
           # Make table name accessible as environment variable from function code during execution
@@ -98,7 +98,7 @@ Resources:
       Policies:
         # Give Create/Read/Update/Delete Permissions to the AddressTable
         - DynamoDBCrudPolicy:
-            TableName: addresses
+            TableName: !Ref AddressTable
       Environment:
         Variables:
           # Make table name accessible as environment variable from function code during execution
@@ -113,7 +113,6 @@ Resources:
   AddressTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
-      TableName: addresses
       PrimaryKey:
         Name: id
         Type: String
