@@ -43,8 +43,8 @@ exports.putItemHandler = async (event) => {
     } catch(err) {
         console.log(err); // TypeError: failed to fetch
         const response = {
-            statusCode: 400,
-            body,
+            statusCode: 200,
+            body: err,
         };
         return response;
     }
